@@ -1,0 +1,33 @@
+free -m
+top
+sudo apt-get update
+apt-cache search net-tools
+apt-get install net-tools
+netstat -ntlp
+apt-get install qemu-kvm
+
+apt-get install qemu-kvm virt-manager bridge-utils qemu-system
+apt-get install qemu-kvm virt-manager bridge-utils qemu-system virt-manager
+
+(or)
+
+apt-get install qemu-kvm virt-manager virt-viewer virtinst
+apt-get install libvirt-bin qemu-system virt-manager bridge-utils
+
+nano /etc/libvirt/libvirtd.conf 
+chmod +rwx filename //change write permission
+
+
+listen_addr = "0.0.0.0"
+unix_sock_group = "libvirt"
+unix_sock_ro_perms = "0777"
+unix_sock_rw_perms = "0777"
+unix_sock_dir = "/var/run/libvirt"
+auth_unix_ro = "none"
+auth_unix_rw = "none"
+
+/etc/init.d/libvirtd restart
+/etc/init.d/libvirtd status
+wget "http://download.cirros-cloud.net/0.3.2/cirros-0.3.2-i386-diskk.img"
+virt-manager
+virsh list
